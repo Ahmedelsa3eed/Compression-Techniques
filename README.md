@@ -1,12 +1,4 @@
 # Compression-Algorithms
-### LZW_coding
-- User Manual
-- the jar file is located in the LZW_coding folder
-- naviagte to jar file location
-- to run the compression
-        java -jar LZW_coding.jar c 'path to original file to compress'
-- to run the decompression
-        java -jar LZW_coding.jar d 'path to compressed file' 'output path'
 
-In case of compression: The compressed file will be generated in the same location of the jar file
-In case of decompression: The decompressed file will be generated in the specified second argument after compressed file path
+- [Huffman Coding](https://github.com/Ahmedelsa3eed/Compression-Algorithms/blob/main/Huffman/README.md)
+- [LZW Coding](https://github.com/Ahmedelsa3eed/Compression-Algorithms/blob/main/LZW_coding/README.md)
