@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="LZW_coding:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/LZW_coding_jar</output-path>
+    <root id="archive" name="LZW_coding.jar">
+      <element id="module-output" name="LZW_coding" />
+    </root>
+  </artifact>
+</component>
