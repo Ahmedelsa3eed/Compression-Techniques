@@ -95,25 +95,39 @@ public class Encoder {
     }
 
     public static void main(String[] args) throws Exception {
-        String filePath = "AWS_Cassandra_Whitepaper.pdf";
-        String originalHash = calculateSHA256(filePath);
-
-        Encoder encoder = new Encoder(256);
-        encoder.compressFile(filePath);
-        System.out.println("Finished Encoding");
-
-        Decoder decoder = new Decoder(256);
-        String decompressedPath = "AWS_Cassandra_Whitepaper_de.pdf";
-//        decoder.decompressFile(filePath + ".lzw", decompressedPath);
-        System.out.println("Finished Decoding");
-
-        String decompressedHash = calculateSHA256(decompressedPath);
-
-        if (originalHash.equals(decompressedHash)) {
-            System.out.println("Hashes match. Compression and decompression successful.");
-        } else {
-            System.out.println("Hashes do not match. Compression and decompression failed.");
+        String flag = args[0];
+        if (flag.equals("c")) {
+            Encoder encoder = new Encoder(256);
+            encoder.compressFile(args[1]);
+            System.out.println("Finished Encoding");
+        }else if (flag.equals("d")) {
+            Decoder decoder = new Decoder(256);
+            String decompressedPath = "AWS_Cassandra_Whitepaper_de.pdf";
+            decoder.decompressFile(args[1], args[2]);
+            System.out.println("Finished Decoding");
+        }else {
+            System.out.println("Invalid Command !");
         }
+
+//        String filePath = "AWS_Cassandra_Whitepaper.pdf";
+//        String originalHash = calculateSHA256(filePath);
+//
+//        Encoder encoder = new Encoder(256);
+//        encoder.compressFile(filePath);
+//        System.out.println("Finished Encoding");
+//
+//        Decoder decoder = new Decoder(256);
+//        String decompressedPath = "AWS_Cassandra_Whitepaper_de.pdf";
+//        decoder.decompressFile(filePath + ".lzw", decompressedPath);
+//        System.out.println("Finished Decoding");
+//
+//        String decompressedHash = calculateSHA256(decompressedPath);
+//
+//        if (originalHash.equals(decompressedHash)) {
+//            System.out.println("Hashes match. Compression and decompression successful.");
+//        } else {
+//            System.out.println("Hashes do not match. Compression and decompression failed.");
+//        }
     }
 
     public static String calculateSHA256(String filePath) throws IOException {
